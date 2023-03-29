@@ -24,26 +24,37 @@ function ChatRooms() {
   }
 
   return (
-    <div>
-      <input placeholder="Chat Room Name" ref={newChatRoomRef} />
-      <button onClick={handleChatting}>Start Chatting</button>
-
-      <ul>
-        {Object.keys(chatRooms).map((key) => {
-          return (
-            <div key={key}>
-              <button
-                disabled={key === chatRoomId}
-                //@ts-ignore
-                title={`Join ${chatRooms[key].name}`}
-                onClick={() => handleJoinedRoom(key)}>
-                {/* @ts-ignore */}
-                {chatRooms[key].name}
-              </button>
-            </div>
-          );
-        })}
-      </ul>
+    <div className="flex flex-row gap-10">
+      <div className="border h-max">
+        <ul>
+          {Object.keys(chatRooms).map((key) => {
+            return (
+              <div key={key} className="mb-10 border">
+                <button
+                  disabled={key === chatRoomId}
+                  //@ts-ignore
+                  title={`Join ${chatRooms[key].name}`}
+                  onClick={() => handleJoinedRoom(key)}>
+                  {/* @ts-ignore */}
+                  {chatRooms[key].name}
+                </button>
+              </div>
+            );
+          })}
+        </ul>
+      </div>
+      <div className="flex gap-2 mb-5">
+        <input
+          placeholder="Chat Room Name"
+          ref={newChatRoomRef}
+          className="focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 rounded-md py-3"
+        />
+        <button
+          onClick={handleChatting}
+          className="font-bold inline-flex items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none">
+          Start Chatting
+        </button>
+      </div>
     </div>
   );
 }

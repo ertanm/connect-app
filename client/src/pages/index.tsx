@@ -14,7 +14,6 @@ export default function Home() {
       </Head>
       <main>
         <h1>Connect app pracrice</h1>
-        {socket.id}
       </main>
     </>
   );

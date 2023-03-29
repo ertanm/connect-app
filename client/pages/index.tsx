@@ -26,18 +26,31 @@ export default function Home() {
       <Head>
         <title>Connect App</title>
       </Head>
-      <div>
+
+      <div className="flex h-screen w-screen justify-center items-center bg-gray-100 flex-col ">
+        <div className="text-xl font-bold text-gray-600 mb-20">
+          <h2>Connect App</h2>
+        </div>
         {!username && (
-          <div>
+          <div className="flex gap-2">
             {/* Gives error on ref for some reason  */}
-            {/* @ts-ignore */}
-            <input placeholder="username" ref={usernameRef} />
-            <button onClick={handleUsername}>Chat</button>
+
+            <input
+              placeholder="username"
+              //@ts-ignore
+              ref={usernameRef}
+              className="focus:outline-none  focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 rounded-xl py-3"
+            />
+            <button
+              onClick={handleUsername}
+              className="font-bold inline-flex items-center justify-center rounded-xl px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none">
+              Chat
+            </button>
           </div>
         )}
 
         {username && (
-          <div>
+          <div className="border h-1/2 w-1/2 flex flex-col items-center">
             <ChatRooms />
             <Texts />
           </div>
