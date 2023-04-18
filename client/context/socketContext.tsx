@@ -28,6 +28,12 @@ function SocketProvider(props: any) {
   const [chatRooms, setChatRooms] = useState({});
   const [messages, setMessages] = useState([]);
 
+  useEffect(() => {
+    window.onfocus = () => {
+      document.title = "Connect App";
+    };
+  }, []);
+
   socket.on("chatRooms", (value) => {
     setChatRooms(value);
   });
@@ -38,6 +44,9 @@ function SocketProvider(props: any) {
   });
 
   socket.on("message", ({ message, username, time }) => {
+    if (!document.hasFocus()) {
+      document.title = "New messages...";
+    }
     //@ts-ignore
     setMessages([...messages, { message, username, time }]);
   });

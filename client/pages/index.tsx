@@ -21,6 +21,13 @@ export default function Home() {
     localStorage.setItem("user", value);
   }
 
+  useEffect(() => {
+    if (usernameRef) {
+      //@ts-ignore
+      usernameRef.current.value = localStorage.getItem("username") || "";
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -50,9 +57,13 @@ export default function Home() {
         )}
 
         {username && (
-          <div className="border h-1/2 w-1/2 flex flex-col items-center">
-            <ChatRooms />
-            <Texts />
+          <div className="h-screen w-screen flex flex-row p-20">
+            <div className="flex-shrink-0 w-1/3 h-full bg-gray-100 border-r border-gray-300">
+              <ChatRooms />
+            </div>
+            <div className="flex-grow w-2/3 h-full bg-white">
+              <Texts />
+            </div>
           </div>
         )}
       </div>
