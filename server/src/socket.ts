@@ -10,6 +10,8 @@ function socket({ io }: { io: Server }) {
   io.on("connection", (socket: Socket) => {
     log.info(`⚡: User Connected -> ${socket.id}`);
 
+    socket.emit("chatRooms", chatRooms);
+
     socket.on("create-room", ({ chatRoomName }) => {
       log.info(chatRoomName);
 
