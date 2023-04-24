@@ -35,7 +35,7 @@ function socket({ io }: { io: Server }) {
       socket.to(chatRoomId).emit("message", {
         message,
         username,
-        time: `${date.getHours}:${date.getMinutes}`,
+        time: `${date.getHours()}:${date.getMinutes()}`,
       });
     });
 
