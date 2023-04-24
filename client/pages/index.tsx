@@ -35,7 +35,7 @@ export default function Home() {
       </Head>
 
       <div className="flex h-screen w-screen justify-center items-center bg-gray-100 flex-col ">
-        <div className="text-xl font-bold text-gray-600 mb-20">
+        <div className="text-2xl pt-5 font-bold text-gray-600 mb-20">
           <h2>Connect App</h2>
         </div>
         {!username && (
@@ -58,7 +58,7 @@ export default function Home() {
 
         {username && (
           <div className="h-screen w-screen flex flex-row p-20">
-            <div className="flex-shrink-0 w-1/3 h-full bg-gray-100 border-r border-gray-300">
+            <div className="flex-shrink-0 w-1/3 h-full bg-gray-100">
               <ChatRooms />
             </div>
             <div className="flex-grow w-2/3 h-full bg-white">

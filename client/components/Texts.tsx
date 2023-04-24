@@ -42,8 +42,8 @@ function Texts() {
   }
 
   return (
-    <div className="border flex flex-col items-center h-full gap-10 justify-evenly wrapper">
-      <div className="border flex-1 overflow-y-scroll max-h-full w-full messagesList">
+    <div className=" flex flex-col items-center h-full gap-10 justify-evenly wrapper">
+      <div className=" flex-1 overflow-y-scroll max-h-full w-full messagesList">
         {/* If there are no messages */}
         {
           //@ts-ignore
@@ -90,16 +90,28 @@ function Texts() {
           )
         }
       </div>
-      <div className="w-full flex gap-2">
+      <div className="relative w-full flex gap-2">
         <input
           placeholder="Type a message"
           ref={messagesRef}
-          className="focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 rounded-md py-3 w-full"
+          className="focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 py-3 w-full"
         />
         <button
           onClick={handleMessages}
-          className="font-medium inline-flex items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none">
-          SEND
+          className="absolute right-0 top-0 px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+            />
+          </svg>
         </button>
       </div>
     </div>
