@@ -34,23 +34,23 @@ export default function Home() {
         <title>Connect App</title>
       </Head>
 
-      <div className="flex h-screen w-screen justify-center items-center bg-gray-100 flex-col ">
-        <div className="text-2xl pt-5 font-bold text-gray-600 mb-20">
+      <div className="flex h-screen w-screen justify-center items-center bg-gray-900 flex-col ">
+        <div className="text-2xl pt-5 font-bold text-white mb-20">
           <h2>Connect App</h2>
         </div>
         {!username && (
-          <div className="flex gap-2">
+          <div className="flex gap-2 bg-gray-800 p-2 rounded-2xl">
             {/* Gives error on ref for some reason  */}
 
             <input
-              placeholder="username"
+              placeholder="Enter a username"
               //@ts-ignore
               ref={usernameRef}
-              className="focus:outline-none  focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 rounded-xl py-3"
+              className="focus:outline-none placeholder:text-white bg-gray-800 placeholder:bg-gray-800 text-white placeholder-gray-600 pl-12 py-3"
             />
             <button
               onClick={handleUsername}
-              className="font-bold inline-flex items-center justify-center rounded-xl px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none">
+              className="font-bold inline-flex items-center justify-center rounded-2xl px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-700 hover:bg-blue-400 focus:outline-none">
               Chat
             </button>
           </div>
@@ -58,10 +58,10 @@ export default function Home() {
 
         {username && (
           <div className="h-screen w-screen flex flex-row p-20">
-            <div className="flex-shrink-0 w-1/3 h-full bg-gray-100">
+            <div className="flex-shrink-0 w-1/3 h-full bg-gray-800 rounded-l-xl">
               <ChatRooms />
             </div>
-            <div className="flex-grow w-2/3 h-full bg-white">
+            <div className="flex-grow w-2/3 h-full bg-gray-800 rounded-r-xl">
               <Texts />
             </div>
           </div>

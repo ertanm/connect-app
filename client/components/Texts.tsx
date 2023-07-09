@@ -90,15 +90,15 @@ function Texts() {
           )
         }
       </div>
-      <div className="relative w-full flex gap-2">
+      <div className="relative w-full flex gap-2 rounded-r-xl">
         <input
           placeholder="Type a message"
           ref={messagesRef}
-          className="focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-200 py-3 w-full"
+          className="focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-700 py-3 w-full rounded-br-xl"
         />
         <button
           onClick={handleMessages}
-          className="absolute right-0 top-0 px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none">
+          className="absolute right-0 top-0 px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none rounded-br-xl">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
