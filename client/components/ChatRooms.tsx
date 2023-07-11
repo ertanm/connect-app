@@ -91,12 +91,11 @@ function ChatRooms() {
                   title={`Join ${chatRooms[key].name}`}
                   onClick={() => handleJoinedRoom(key)}
                   className={`
-                w-full bg-gray-800 px-4 py-2 rounded-lg focus:outline-none
-                ${key === chatRoomId ? "bg-gray-800 cursor-default" : ""}
+                w-full bg-blue-500 px-4 py-2 rounded-lg focus:outline-none border-b border-gray-700
+                ${key === chatRoomId ? "bg-blue-500 cursor-default" : ""}
               `}>
                   <span className="flex-1 text-left">
-                    {/* @ts-ignore */}
-                    {chatRooms[key].name}
+                    {/* @ts-ignore */} {chatRooms[key].name}
                   </span>
                 </button>
               </li>

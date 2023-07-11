@@ -58,10 +58,10 @@ export default function Home() {
 
         {username && (
           <div className="h-screen w-screen flex flex-row p-20">
-            <div className="flex-shrink-0 w-1/3 h-full bg-gray-800 rounded-l-xl">
+            <div className="flex-shrink-0 w-1/3 h-full bg-gray-800 border border-gray-700 rounded-l-xl">
               <ChatRooms />
             </div>
-            <div className="flex-grow w-2/3 h-full bg-gray-800 rounded-r-xl">
+            <div className="flex-grow w-2/3 h-full bg-gray-800 rounded-r-xl border-r border-t border-b border-gray-700">
               <Texts />
             </div>
           </div>

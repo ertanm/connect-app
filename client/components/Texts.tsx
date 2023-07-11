@@ -48,7 +48,7 @@ function Texts() {
         {
           //@ts-ignore
           messages.length === 0 ? (
-            <div className="h-full flex flex-col items-center justify-center text-gray-500">
+            <div className="h-full flex flex-col items-center justify-center text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-16 w-16 mb-4"
@@ -71,12 +71,12 @@ function Texts() {
                   return (
                     <div
                       key={index}
-                      className="message mb-4 p-4 rounded-lg border border-gray-400 bg-gray-100">
+                      className="message mb-4 p-4 rounded-lg border border-gray-400 bg-gray-800">
                       <div key={index} className="messageInner">
-                        <span className="messageSender text-xs font-medium text-gray-500">
+                        <span className="messageSender text-xs font-medium text-white">
                           {username} - {time}
                         </span>
-                        <span className="messageBody break-words text-sm ml-2">
+                        <span className="messageBody break-words text-sm ml-2 text-white">
                           {message}
                         </span>
                       </div>
@@ -90,11 +90,11 @@ function Texts() {
           )
         }
       </div>
-      <div className="relative w-full flex gap-2 rounded-r-xl">
+      <div className="relative w-full flex gap-2 rounded-r-xl border  border-gray-700">
         <input
           placeholder="Type a message"
           ref={messagesRef}
-          className="focus:outline-none focus:placeholder-gray-400 text-gray-600 placeholder-gray-600 pl-12 bg-gray-700 py-3 w-full rounded-br-xl"
+          className="focus:outline-none  focus:placeholder-gray-400 text-white placeholder-gray-600 pl-12 bg-gray-800 py-3 w-full rounded-br-xl"
         />
         <button
           onClick={handleMessages}
